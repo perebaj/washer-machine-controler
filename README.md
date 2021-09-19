@@ -27,7 +27,7 @@ Os módulos mais importantes para controlar o fluxo de energia e água, são o R
 
 É importante resaltar o rele e válvula escolhidos para realizar esse monitoramente, o [sensor de vazão](https://produto.mercadolivre.com.br/MLB-1614904261-sensor-de-fluxo-vazo-de-agua-yf-s201-arduino-_JM?matt_tool=87716990&matt_word=&matt_source=google&matt_campaign_id=12413740998&matt_ad_group_id=119070072438&matt_match_type=&matt_network=g&matt_device=c&matt_creative=500702333978&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=244393755&matt_product_id=MLB1614904261&matt_product_partition_id=337120033364&matt_target_id=pla-337120033364&gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-xDBRNt_qhN18Q2n2y3zwrj--qc7V7aJAUfBRaVt-7ifHk0TWf68iMaAg6mEALw_wcB), fornece pulsor elétricos de acordo com o fluxo de água. Sendo possível realizar o cálculo do fluxo:
 
-$f/K$
+f/K
 
 f = frequência dos pulsos
 
@@ -35,7 +35,7 @@ K = 7.5 (Fluxo em litros/min)
 
 E o rele será utilizado para calcular o gasto de energia em Watts em tempo real, utilizando a fórmula
 
-$P = V.I$
+P = V.I
 
 E multiplicar a potência encontrada pelo custo de Watts médio cobrado.
 
