@@ -10,8 +10,8 @@ Como:
 <img src=images/objetivo.png width="300">
 
 ## Componentes Utilizados
-### Válvula Solenoide 3/4 | Preço Médio: R$ 61
-![Válvula](images/valvulasolenoide.png)
+### Sensor De Fluxo De Água | R$ 40
+![Válvula](images/watersensor.jpg)
 ### Módulo Rele | Preço Médio: R$ 11
 <img src=images/rele.jpg width="300">
 

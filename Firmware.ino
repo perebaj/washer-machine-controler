@@ -2,12 +2,11 @@
 // Include Libraries
 #include "Arduino.h"
 #include "Relay.h"
-#include "SolenoidValve.h"
 
 
 // Pin Definitions
 #define RELAYMODULE_PIN_SIGNAL	3
-#define SOLENOIDVALVE_PIN_COIL1	2
+#define WATERFLOW_5V_PIN_SIG	2
 
 
 
@@ -15,7 +14,6 @@
 
 // object initialization
 Relay relayModule(RELAYMODULE_PIN_SIGNAL);
-SolenoidValve solenoidValve(SOLENOIDVALVE_PIN_COIL1);
 
 
 // define vars for testing menu
@@ -50,14 +48,9 @@ void loop()
     relayModule.off();      // 3. turns off.
     delay(500);             // 4. waits 500 milliseconds (0.5 sec). Change the value in the brackets (500) for a longer or shorter delay in milliseconds.
     }
-    else if(menuOption == '2') {
-    // 12V Solenoid Valve - 3/4'' - Test Code
-    // The solenoid valve will turn on and off for 500ms (0.5 sec)
-    solenoidValve.on(); // 1. turns on
-    delay(500);       // 2. waits 500 milliseconds (0.5 sec). Change the value in the brackets (500) for a longer or shorter delay in milliseconds.
-    solenoidValve.off();// 3. turns off
-    delay(500);       // 4. waits 500 milliseconds (0.5 sec). Change the value in the brackets (500) for a longer or shorter delay in milliseconds.
-
+    else if(menuOption == '2')
+    {
+    // Disclaimer: The Water Flow Sensor G1/2'' is in testing and/or doesn't have code, therefore it may be buggy. Please be kind and report any bugs you may find.
     }
     
     if (millis() - time0 > timeout)
@@ -76,7 +69,7 @@ char menu()
 
     Serial.println(F("\nWhich component would you like to test?"));
     Serial.println(F("(1) Relay Module"));
-    Serial.println(F("(2) 12V Solenoid Valve - 3/4''"));
+    Serial.println(F("(2) Water Flow Sensor G1/2''"));
     Serial.println(F("(menu) send anything else or press on board reset button\n"));
     while (!Serial.available());
 
@@ -90,7 +83,7 @@ char menu()
             if(c == '1') 
     			Serial.println(F("Now Testing Relay Module"));
     		else if(c == '2') 
-    			Serial.println(F("Now Testing 12V Solenoid Valve - 3/4''"));
+    			Serial.println(F("Now Testing Water Flow Sensor G1/2'' - note that this component doesn't have a test code"));
             else
             {
                 Serial.println(F("illegal input!"));
@@ -101,3 +94,47 @@ char menu()
         }
     }
 }
+
+/*******************************************************
+
+*    Circuito.io is an automatic generator of schematics and code for off
+*    the shelf hardware combinations.
+
+*    Copyright (C) 2016 Roboplan Technologies Ltd.
+
+*    This program is free software: you can redistribute it and/or modify
+*    it under the terms of the GNU General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    (at your option) any later version.
+
+*    This program is distributed in the hope that it will be useful,
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    GNU General Public License for more details.
+
+*    You should have received a copy of the GNU General Public License
+*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*    In addition, and without limitation, to the disclaimers of warranties 
+*    stated above and in the GNU General Public License version 3 (or any 
+*    later version), Roboplan Technologies Ltd. ("Roboplan") offers this 
+*    program subject to the following warranty disclaimers and by using 
+*    this program you acknowledge and agree to the following:
+*    THIS PROGRAM IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, AND 
+*    WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED.  ROBOPLAN 
+*    HEREBY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT 
+*    NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS 
+*    FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND THOSE ARISING BY 
+*    STATUTE OR FROM A COURSE OF DEALING OR USAGE OF TRADE. 
+*    YOUR RELIANCE ON, OR USE OF THIS PROGRAM IS AT YOUR SOLE RISK.
+*    ROBOPLAN DOES NOT GUARANTEE THAT THE PROGRAM WILL BE FREE OF, OR NOT 
+*    SUSCEPTIBLE TO, BUGS, SECURITY BREACHES, OR VIRUSES. ROBOPLAN DOES 
+*    NOT WARRANT THAT YOUR USE OF THE PROGRAM, INCLUDING PURSUANT TO 
+*    SCHEMATICS, INSTRUCTIONS OR RECOMMENDATIONS OF ROBOPLAN, WILL BE SAFE 
+*    FOR PERSONAL USE OR FOR PRODUCTION OR COMMERCIAL USE, WILL NOT 
+*    VIOLATE ANY THIRD PARTY RIGHTS, WILL PROVIDE THE INTENDED OR DESIRED
+*    RESULTS, OR OPERATE AS YOU INTENDED OR AS MAY BE INDICATED BY ROBOPLAN. 
+*    YOU HEREBY WAIVE, AGREE NOT TO ASSERT AGAINST, AND RELEASE ROBOPLAN, 
+*    ITS LICENSORS AND AFFILIATES FROM, ANY CLAIMS IN CONNECTION WITH ANY OF 
+*    THE ABOVE. 
+********************************************************/
