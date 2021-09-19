@@ -21,7 +21,7 @@ Como:
 
 
 ## Implementação do Circuito
-- ![Circuito](images/circuito.png)
+- ![Circuito](images/Untitled%20(2).png)
 
 ## Recursos Importantes
 
